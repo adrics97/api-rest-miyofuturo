@@ -18,4 +18,12 @@ public class AcademiasService {
 		return acaRepo.findAll();
 	}
 
+	public List<Academia> getAcademiasByCity(String ciudad) {
+		return acaRepo.findByCiudad(ciudad);
+	}
+
+	public Academia getAcademia(int idacademia) {
+		return acaRepo.findById(idacademia).orElse(null);
+	}
+
 }

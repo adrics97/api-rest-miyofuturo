@@ -25,7 +25,7 @@ public class CarreraFavoritaService {
 		return carFavRepo.findByIdusuario(u);
 	}
 
-	public CarreraFavorita createEventoFavorito(CarreraFavorita carFav) {
+	public CarreraFavorita createCarreraFavorita(CarreraFavorita carFav) {
 		return carFavRepo.save(carFav);
 	}
 

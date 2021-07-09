@@ -46,6 +46,17 @@ public class NotaController {
 		return notasService.getNotasByIdusuario(idusuario);
 	}
 	
+	@GetMapping({"/suspendidas"})
+	public List<Nota> getNotasSuspendidasByIdusuario(@RequestParam("idusuario") int idusuario){
+		return notasService.getNotasSuspendidasByIdusuario(idusuario);
+	}
+	
+
+	@GetMapping({"/sobresalientes"})
+	public List<Nota> getNotasSobresalientesByIdusuario(@RequestParam("idusuario") int idusuario){
+		return notasService.getNotasSobresalientesByIdusuario(idusuario);
+	}
+	
 	
 	@GetMapping("/nota")
 	public Nota getNota(@RequestParam("idusuario") int idusuario, @RequestParam("idasignatura") int idasignatura){

@@ -36,6 +36,9 @@ public class Evento {
 	@Column(name = "url")
 	private String url;
 	
+	@Column(name = "image")
+	private String image;
+	
 	@OneToMany(mappedBy = "idevento")
 	List<EventoFavorito> eventos_favoritos = new ArrayList<EventoFavorito>();
 	
@@ -99,6 +102,15 @@ public class Evento {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String ima) {
+		this.image = ima;
+	}
+	
 	
 	
 }

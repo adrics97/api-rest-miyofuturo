@@ -14,36 +14,37 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.uv.api.miyofuturo.entities.AcademiaFavorita;
 import es.uv.api.miyofuturo.entities.CarreraFavorita;
-import es.uv.api.miyofuturo.entities.EventoFavorito;
+import es.uv.api.miyofuturo.services.AcademiaFavoritaService;
 import es.uv.api.miyofuturo.services.CarreraFavoritaService;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping({"/carreras/favoritas"})
-public class CarreaFavoritaController {
+@RequestMapping({"/academias/favoritas"})
+public class AcademiaFavoritaController {
 
 	@Autowired
-	private CarreraFavoritaService carFavService;
+	private AcademiaFavoritaService acaFavService;
 	
 	@GetMapping("/user")
-	public List<CarreraFavorita> getAFavoritasByUser(@RequestParam("idusuario") int idusuario){
-		return carFavService.getCarrerasFavoritasByUser(idusuario);
+	public List<AcademiaFavorita> getAcademiasFavoritasByUser(@RequestParam("idusuario") int idusuario){
+		return acaFavService.getAcademiasFavoritasByUser(idusuario);
 	}
 	
-	@GetMapping("/carrera")
-	public CarreraFavorita getCarreraFavorita(@RequestParam("idcarrera") int idcarrera, @RequestParam("idusuario") int idusuario){
-		return carFavService.getCarreraFavorita(idcarrera, idusuario);
+	@GetMapping("/academia")
+	public AcademiaFavorita getAcademiaFavorita(@RequestParam("idacademia") int idacademia, @RequestParam("idusuario") int idusuario){
+		return acaFavService.getAcademiaFavorita(idacademia, idusuario);
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public CarreraFavorita createCarreraFavorita(@RequestBody CarreraFavorita carFav) {
-		return carFavService.createCarreraFavorita(carFav);
+	public AcademiaFavorita createAcademiaFavorita(@RequestBody AcademiaFavorita acaFav) {
+		return acaFavService.createAcademiaFavorita(acaFav);
 	}
 	
 	@DeleteMapping
-	public  void deleteCarreraFavorita(@RequestParam("idcarrera") int idcarrera, @RequestParam("idusuario") int idusuario){
-		carFavService.deleteCarreraFavorita(idcarrera,idusuario);
+	public  void deleteAcademiaFavorita(@RequestParam("idacademia") int idacademia, @RequestParam("idusuario") int idusuario){
+		acaFavService.deleteAcademiaFavorita(idacademia,idusuario);
 	}
 }

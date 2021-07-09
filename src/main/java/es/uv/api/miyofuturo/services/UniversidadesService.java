@@ -23,8 +23,8 @@ public class UniversidadesService {
 		return uniRepo.findByComunidad(comunidad);
 	}
 	
-	public List<Universidad> getUniversidadesByProvincia(String provincia) {
-		return uniRepo.findByProvincia(provincia);
+	public List<Universidad> getUniversidadesByProvincia(String provincia, String comunidad) {
+		return uniRepo.findByProvincia(provincia, comunidad);
 	}
 
 	public Universidad getUniversidad(int iduniversidad) {

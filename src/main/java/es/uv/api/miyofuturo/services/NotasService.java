@@ -61,4 +61,14 @@ public class NotasService {
 		deleteNota(idusuario, idasignatura);
 		return notasRepo.save(nota);
 	}
+
+	public List<Nota> getNotasSuspendidasByIdusuario(int idusuario) {
+		Usuario usuario = usuariosRepo.findById(idusuario).orElse(null);
+		return notasRepo.findNotasSuspendidas(usuario);
+	}
+
+	public List<Nota> getNotasSobresalientesByIdusuario(int idusuario) {
+		Usuario usuario = usuariosRepo.findById(idusuario).orElse(null);
+		return notasRepo.findNotasSobresalientes(usuario);
+	}
 }

@@ -52,10 +52,7 @@ public class Usuario {
 	@OneToMany(mappedBy = "idusuario")
 	private List<EventoFavorito> eventos_favoritos = new ArrayList<EventoFavorito>();
 	
-	/*
-	@ManyToMany(mappedBy="carreras_favoritas")
-	private List<Carrera> allCarreras;
-	*/
+
 
 	public Usuario() {
 		

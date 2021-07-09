@@ -41,7 +41,7 @@ public class UniversidadController {
 	
 
 	@GetMapping({"/provincia"})
-	public List<Universidad> getUniversidadesByProvincia(@RequestParam("provincia") String provincia){
-		return uniService.getUniversidadesByProvincia(provincia);
+	public List<Universidad> getUniversidadesByProvincia(@RequestParam("provincia") String provincia, @RequestParam("comunidad") String comunidad){
+		return uniService.getUniversidadesByProvincia(provincia,comunidad);
 	}
 }

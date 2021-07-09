@@ -36,4 +36,8 @@ public class EventoController {
 		return eventosService.getEventosByCity(ciudad);
 	}
 	
+	@GetMapping({"/cercanos"})
+	public List<Evento> getEventosCercanos(){
+		return eventosService.getEventosCercanos();
+	}
 }
