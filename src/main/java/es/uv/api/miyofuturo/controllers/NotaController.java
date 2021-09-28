@@ -36,9 +36,9 @@ public class NotaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Nota createUsuario(@RequestBody Nota nota) {
+	public Nota createNota(@RequestBody Nota nota) {
 		nota.print();
-		return notasService.createUsuario(nota);
+		return notasService.createNota(nota);
 	}
 	
 	@GetMapping({"/user"})

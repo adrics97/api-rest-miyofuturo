@@ -28,7 +28,7 @@ public class NotasService {
 		return notasRepo.findAll();
 	}
 	
-	public Nota createUsuario(@Valid Nota nota) {
+	public Nota createNota(@Valid Nota nota) {
 		return notasRepo.save(nota);
 	}
 	

@@ -5,9 +5,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import es.uv.api.miyofuturo.entities.Evento;
 
+@Repository
 public interface EventosRepository extends JpaRepository<Evento, Integer>{
 	
 	public List<Evento> findByCiudad(String ciudad);

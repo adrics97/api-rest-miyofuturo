@@ -30,12 +30,12 @@ public class AsignaturaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Asignatura createUsuario(@RequestBody Asignatura asig){
+	public Asignatura createAsignatura(@RequestBody Asignatura asig){
 		return asignaturasService.createAsignatura(asig);
 	}
 	
 	@GetMapping
-	public List<Asignatura> getAllUsuarios(){
+	public List<Asignatura> getAllAsignaturas(){
 		return asignaturasService.getAllAsignaturas();
 	}
 	

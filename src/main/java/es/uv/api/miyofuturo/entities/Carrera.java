@@ -1,6 +1,5 @@
 package es.uv.api.miyofuturo.entities;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,9 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -35,15 +31,6 @@ public class Carrera {
 	
 	@OneToMany(mappedBy = "idcarrera")
 	private List<CarreraUniversidad> carreras_universidades = new ArrayList<CarreraUniversidad>();
-	
-	/*
-	@ManyToMany
-	@JoinTable(name="carrera_favorita",
-			joinColumns=@JoinColumn(name="idcarrera",referencedColumnName="idcarrera"),
-			inverseJoinColumns=@JoinColumn(name="idusuario", referencedColumnName="idusuario")
-	)
-	private List<Usuario> carreras_favoritas = new ArrayList<Usuario>();
-	*/
 	
 	public Carrera(){
 		
